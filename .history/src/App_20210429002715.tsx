@@ -5,7 +5,6 @@ import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom';
 import UsersPage from './component/pages/UsersPage';
 import TodosPage from './component/pages/TodosPage';
 import UserItemPage from './component/pages/UserItemPage';
-import TodoItemPage from './component/pages/TodoItemPage';
 
 const App = () => {
     
@@ -34,11 +33,11 @@ const App = () => {
             <Route path={'/todos'} exact>
                 <TodosPage/>
             </Route>
-            <Route path={'/users/:id'}>
+            <Route path={'/user/:id'}>
                 <UserItemPage  />
             </Route>
-            <Route path={'/todos/:id'} exact>
-                <TodoItemPage />
+            <Route path={'/todo/:id'} exact>
+                <TodosPage/>
             </Route>
         </Router>
     );

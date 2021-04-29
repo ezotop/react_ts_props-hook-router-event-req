@@ -4,8 +4,6 @@ import EventsExample from './component/EventsExample';
 import {BrowserRouter as Router, NavLink, Route} from 'react-router-dom';
 import UsersPage from './component/pages/UsersPage';
 import TodosPage from './component/pages/TodosPage';
-import UserItemPage from './component/pages/UserItemPage';
-import TodoItemPage from './component/pages/TodoItemPage';
 
 const App = () => {
     
@@ -16,7 +14,7 @@ const App = () => {
                 <NavLink to={'/users'}>Users</NavLink>
                 <NavLink to={'/todos'}>Todos</NavLink>
             </div>
-            <Route path={'/'} exact>
+            <Route path={'/'}>
                 <EventsExample/>
                 <Card
                     onClick={(num) => console.log('Click', num)}
@@ -34,12 +32,7 @@ const App = () => {
             <Route path={'/todos'} exact>
                 <TodosPage/>
             </Route>
-            <Route path={'/users/:id'}>
-                <UserItemPage  />
-            </Route>
-            <Route path={'/todos/:id'} exact>
-                <TodoItemPage />
-            </Route>
+            
         </Router>
     );
 };
